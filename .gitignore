@@ -1,0 +1,28 @@
+# Node dependencies
+node_modules/
+
+# Python virtual environments
+.venv/
+
+# Build output
+.next/
+dist/
+
+# Environment variables
+.env
+.env.*
+
+# IDE/editor settings
+.vscode/
+.idea/
+
+# Log files
+*.log
+
+# OS-specific files
+Thumbs.db
+.DS_Store
+
+# Project-specific
+project-files/
+.cursor/

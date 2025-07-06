@@ -8,6 +8,7 @@ import {
   BarChart2,
   Settings as SettingsIcon,
   Menu,
+  FileText,
 } from "lucide-react";
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
@@ -15,6 +16,7 @@ import { Dialog } from "@headlessui/react";
 const navItems = [
   { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
   { name: "Prompts", href: "/prompts", icon: MessageSquare },
+  { name: "Content Plan", href: "/content-plan", icon: FileText },
   { name: "Agents", href: "/agents", icon: Users },
   { name: "Analytics", href: "/analytics", icon: BarChart2 },
   { name: "Settings", href: "/settings", icon: SettingsIcon },

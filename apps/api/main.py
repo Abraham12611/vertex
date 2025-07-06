@@ -1,26 +1,77 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.middleware.trustedhost import TrustedHostMiddleware
+from contextlib import asynccontextmanager
 
-from api.v1.routers import auth, prompts, health
+from api.v1.routers import (
+    auth,
+    prompts,
+    health,
+    agents,
+    content,
+    documents,
+    flows,
+    search,
+    ws
+)
 
-app = FastAPI()
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Startup
+    print("🚀 Starting Vertex DevRel Platform...")
+    yield
+    # Shutdown
+    print("🛑 Shutting down Vertex DevRel Platform...")
 
+app = FastAPI(
+    title="Vertex DevRel Platform API",
+    description="AI-powered DevRel automation platform with multi-agent orchestration",
+    version="1.0.0",
+    lifespan=lifespan
+)
+
+# Security middleware
+app.add_middleware(
+    TrustedHostMiddleware,
+    allowed_hosts=["*"]  # Configure properly for production
+)
+
+# CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["http://localhost:3000", "http://localhost:3001", "https://vertex.vercel.app"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-app.include_router(auth.router, prefix="/auth", tags=["auth"])
-app.include_router(prompts.router, prefix="/prompts", tags=["prompts"])
-app.include_router(health.router, prefix="/health", tags=["health"])
+# Include all routers
+app.include_router(auth.router, prefix="/api/v1/auth", tags=["Authentication"])
+app.include_router(prompts.router, prefix="/api/v1/prompts", tags=["Prompts"])
+app.include_router(health.router, prefix="/api/v1/health", tags=["Health"])
+app.include_router(agents.router, prefix="/api/v1/agents", tags=["Agents"])
+app.include_router(content.router, prefix="/api/v1/content", tags=["Content"])
+app.include_router(documents.router, prefix="/api/v1/documents", tags=["Documents"])
+app.include_router(flows.router, prefix="/api/v1/flows", tags=["Workflows"])
+app.include_router(search.router, prefix="/api/v1/search", tags=["Search"])
+app.include_router(ws.router, prefix="/api/v1/ws", tags=["WebSocket"])
 
+# Root endpoint
+@app.get("/")
+async def root():
+    return {
+        "message": "Welcome to Vertex DevRel Platform API",
+        "version": "1.0.0",
+        "docs": "/docs",
+        "redoc": "/redoc"
+    }
+
+# Health check (legacy endpoint)
 @app.get("/health")
 def health():
-    return {"status": "ok"}
+    return {"status": "ok", "service": "vertex-api"}
 
+# Mock endpoints for frontend development
 @app.get("/mock/prompts")
 def mock_prompts():
     return [

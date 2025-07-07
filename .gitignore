@@ -28,3 +28,4 @@ project-files/
 .cursor/
 changelog.md
 DEMO_SETUP.md
+auto_commit_random_date.sh

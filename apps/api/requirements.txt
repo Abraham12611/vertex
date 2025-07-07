@@ -9,3 +9,24 @@ python-jose[cryptography]
 argon2-cffi
 pydantic-settings
 python-dotenv
+# AI and ML
+groq
+sentence-transformers
+crewai
+langchain
+langchain-groq
+# Coral Protocol
+coral-server
+# Vector search
+pgvector
+# Task queue
+celery
+# HTTP client
+httpx
+requests
+# Utilities
+python-multipart
+aiofiles
+# Development
+pytest
+pytest-asyncio

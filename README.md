@@ -6,18 +6,21 @@
 
 ## Table of Contents
 
-- [What is Vertex?](#what-is-vertex)
-- [Problem & Solution](#problem--solution)
-- [Architecture Overview](#architecture-overview)
-- [Key Integrations](#key-integrations)
-  - [Vultr](#vultr)
-  - [Groq](#groq)
-  - [CrewAI](#crewai)
-  - [Coral Protocol](#coral-protocol)
-  - [FastAPI](#fastapi)
-  - [Other Technologies](#other-technologies)
-- [Monorepo Structure](#monorepo-structure)
-- [References](#references)
+- [Vertex: AI-Powered DevRel Automation Platform](#vertex-ai-powered-devrel-automation-platform)
+	- [Table of Contents](#table-of-contents)
+	- [What is Vertex?](#what-is-vertex)
+		- [The Problem](#the-problem)
+		- [The Solution](#the-solution)
+	- [Architecture Overview](#architecture-overview)
+	- [Key Integrations](#key-integrations)
+		- [Vultr](#vultr)
+		- [Groq](#groq)
+		- [CrewAI](#crewai)
+		- [Coral Protocol](#coral-protocol)
+		- [FastAPI](#fastapi)
+	- [Other Technologies We Integrated](#other-technologies-we-integrated)
+	- [Monorepo Structure](#monorepo-structure)
+	- [References](#references)
 
 ---
 
@@ -33,7 +36,7 @@ Vertex is an AI-powered DevRel automation platform that enables developer-focuse
 
 ### The Problem
 
-DevRel teams face challenges with manual content creation, inconsistent messaging, limited resources, and the need to scale community engagement and technical documentation.
+DevRel teams face challenges with manual content creation, inconsistent messaging, limited resources, and the need to scale community engagement and technical documentatio.
 
 ### The Solution
 

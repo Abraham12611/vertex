@@ -20,7 +20,6 @@
 		- [FastAPI](#fastapi)
 	- [Other Technologies We Integrated](#other-technologies-we-integrated)
 	- [Monorepo Structure](#monorepo-structure)
-	- [References](#references)
 
 ---
 
@@ -154,13 +153,6 @@ Vertex solves these challenges by orchestrating a crew of specialized AI agents 
 - **/flows/**: Multi-agent workflow orchestration.
 - **/worker/**: Celery worker and background task management.
 - **/components/**: Shared frontend components (Sidebar, Modals, etc.).
-
----
-
-## References
-
-- [sample-readme.md](https://github.com/Abraham12611/vertex/blob/main/sample-readme.md) — for inspiration and documentation style.
-- [changelog.md](https://github.com/Abraham12611/vertex/blob/main/changelog.md) — for a detailed project history and feature log.
 
 ---
 
